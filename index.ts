@@ -13,7 +13,7 @@ const port = 3001;
 let addresses: string[] = []
 let rowCounter = 0;
 
-const liner = new lineByLine('./addr-list_test.txt');
+const liner = new lineByLine('public/addr-list_test.txt');
 
 let line;
 
@@ -35,6 +35,8 @@ app.use(cors({
   //origin: 'https:website.com'
   origin: '*'
 }));
+
+app.use(express.static('public'))
 
 console.log("root", merkleTree.getRoot().toString('hex'));
 app.get('/', (req: Request, res: Response) => {

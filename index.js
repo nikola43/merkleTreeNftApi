@@ -14,7 +14,7 @@ const app = (0, express_1.default)();
 const port = 3001;
 let addresses = [];
 let rowCounter = 0;
-const liner = new lineByLine('./addr-list_test.txt');
+const liner = new lineByLine('public/addr-list_test.txt');
 let line;
 while (line = liner.next()) {
     addresses.push(line.toString());
@@ -28,6 +28,7 @@ app.use(cors({
     //origin: 'https:website.com'
     origin: '*'
 }));
+app.use(express_1.default.static('public'));
 console.log("root", merkleTree.getRoot().toString('hex'));
 app.get('/', (req, res) => {
     res.send('Express + TypeScript Server');
