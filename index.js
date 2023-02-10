@@ -40,3 +40,4 @@ app.get('/get_proof_by_address/:address', (req, res) => {
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
 });
+module.exports = app;
