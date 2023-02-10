@@ -13,7 +13,7 @@ const port = 3001;
 let addresses: string[] = []
 let rowCounter = 0;
 
-const liner = new lineByLine('addr-list_test.txt');
+const liner = new lineByLine('./addr-list_test.txt');
 
 let line;
 
