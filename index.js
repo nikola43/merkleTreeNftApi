@@ -12,17 +12,25 @@ const cors = require('cors');
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = 3001;
-let addresses = [];
+let addresses = [
+    "0x31935883802D258D73d698AA2aaB31cCE308DBF0",
+    "0xCF49661e783c2b7Bf581106c9f88FFA765752e3d"
+];
 let rowCounter = 0;
+/*
 const liner = new lineByLine('public/addr-list_test.txt');
+
 let line;
+
+
 while (line = liner.next()) {
-    addresses.push(line.toString());
-    rowCounter++;
-    console.log({
-        rowCounter
-    });
+  addresses.push(line.toString())
+  rowCounter++;
+  console.log({
+    rowCounter
+  })
 }
+*/
 const merkleTree = new merkletreejs_1.MerkleTree(addresses, keccak256_1.default, { hashLeaves: true, sortPairs: true });
 app.use(cors({
     //origin: 'https:website.com'

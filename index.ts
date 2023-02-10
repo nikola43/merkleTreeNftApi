@@ -10,12 +10,17 @@ dotenv.config();
 const app: Express = express();
 const port = 3001;
 
-let addresses: string[] = []
+let addresses: string[] = [
+  "0x31935883802D258D73d698AA2aaB31cCE308DBF0",
+  "0xCF49661e783c2b7Bf581106c9f88FFA765752e3d"
+]
 let rowCounter = 0;
 
+/*
 const liner = new lineByLine('public/addr-list_test.txt');
 
 let line;
+
 
 while (line = liner.next()) {
   addresses.push(line.toString())
@@ -24,6 +29,7 @@ while (line = liner.next()) {
     rowCounter
   })
 }
+*/
 
 const merkleTree = new MerkleTree(
   addresses,
